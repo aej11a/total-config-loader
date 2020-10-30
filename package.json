@@ -1,5 +1,5 @@
 {
-  "name": "webpack-plugin-boilerplate",
+  "name": "total-config-webpack-plugin",
   "version": "1.0.1",
   "description": "Boilerplate for writing webpack plugins",
   "main": "dist/cjs.js",
