@@ -25,39 +25,30 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/*.test.js'",
     "clean": "del-cli dist",
-    "lint": "eslint src",
-    "precommit": "lint-staged",
     "test": "jest",
     "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
   },
   "files": [
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ctaylo21/webpack-plugin-boilerplate.git"
+    "url": "git+https://github.com/aej11a/total-config-loader.git"
   },
   "keywords": [
     "webpack",
     "babel",
     "plugin",
-    "jest",
-    "eslint"
+    "config",
+    "total config"
   ],
   "author": {
-    "name": "Caleb Taylor",
-    "email": "caleb89taylor@gmail.com",
-    "url": "http://calebtaylor.io"
+    "name": "Andrew Jones",
+    "email": "aej11@outlook.com"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ctaylo21/webpack-plugin-boilerplate/issues"
+    "url": "https://github.com/aej11a/total-config-loader/issues"
   },
-  "homepage": "https://github.com/ctaylo21/webpack-plugin-boilerplate#readme"
+  "homepage": "https://github.com/aej11a/total-config-loader/"
 }
