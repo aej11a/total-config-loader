@@ -12,11 +12,17 @@ export default class TotalConfigPlugin {
       const totalConfig = require(`${path.resolve()}/total.config`);
 
       for (const configKey in totalConfig) {
-        const newConfigFileSource =
-          `module.exports = ${JSON.stringify(totalConfig[configKey])}`;
+
+        const newConfig = totalConfig[configKey]
           
-        fs.writeFile(`${configKey}.config.js`, newConfigFileSource, () => {
-          this.pushedPaths.push(`${configKey}.config.js`);
+        const newConfigFilePath = newConfig.totalConfig && newConfig.totalConfig.filepath ? newConfig.totalConfig.filepath : `${configKey}.config.js`
+
+        if(newConfig.totalConfig) delete newConfig.totalConfig
+
+        const newConfigFileSource =
+          `module.exports = ${JSON.stringify(newConfig)}`;
+        fs.writeFile(newConfigFilePath, newConfigFileSource, () => {
+          this.pushedPaths.push(newConfigFilePath);
         });
       }
     });
